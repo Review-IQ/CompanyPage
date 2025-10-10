@@ -30,21 +30,22 @@ interface Stat {
   label: string;
 }
 
-interface Testimonial {
-  quote: string;
-  author: string;
-  role: string;
-  company: string;
-  avatar: string;
-}
+// Unused interfaces kept for future use
+// interface Testimonial {
+//   quote: string;
+//   author: string;
+//   role: string;
+//   company: string;
+//   avatar: string;
+// }
 
-interface RoadmapItem {
-  quarter: string;
-  year: string;
-  title: string;
-  description: string;
-  status: 'completed' | 'in-progress' | 'planned';
-}
+// interface RoadmapItem {
+//   quarter: string;
+//   year: string;
+//   title: string;
+//   description: string;
+//   status: 'completed' | 'in-progress' | 'planned';
+// }
 
 // Logo Components
 const HexagonIcon = ({ className = "w-8 h-8" }: { className?: string }) => (
