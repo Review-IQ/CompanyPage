@@ -239,147 +239,147 @@ const MagneticButton = ({ children, href, className = "" }: { children: React.Re
   );
 };
 
-// Testimonials Carousel
-const TestimonialsCarousel = ({ testimonials }: { testimonials: Testimonial[] }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+// Testimonials Carousel - Currently unused but kept for future use
+// const TestimonialsCarousel = ({ testimonials }: { testimonials: Testimonial[] }) => {
+//   const [currentIndex, setCurrentIndex] = useState(0);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, [testimonials.length]);
+//   useEffect(() => {
+//     const timer = setInterval(() => {
+//       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+//     }, 6000);
+//     return () => clearInterval(timer);
+//   }, [testimonials.length]);
 
-  return (
-    <div className="relative h-80 flex items-center justify-center">
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentIndex}
-          initial={{ opacity: 0, y: 20, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: -20, scale: 0.95 }}
-          transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto"
-        >
-          <div className="mb-8">
-            <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-purple-600 to-indigo-600 flex items-center justify-center text-white text-3xl font-bold shadow-xl">
-              {testimonials[currentIndex].avatar}
-            </div>
-            <p className="text-2xl md:text-3xl font-medium text-slate-800 dark:text-slate-200 mb-6 leading-relaxed">
-              "{testimonials[currentIndex].quote}"
-            </p>
-            <div>
-              <p className="font-bold text-lg text-slate-900 dark:text-white">
-                {testimonials[currentIndex].author}
-              </p>
-              <p className="text-slate-600 dark:text-slate-400">
-                {testimonials[currentIndex].role} at {testimonials[currentIndex].company}
-              </p>
-            </div>
-          </div>
-        </motion.div>
-      </AnimatePresence>
+//   return (
+//     <div className="relative h-80 flex items-center justify-center">
+//       <AnimatePresence mode="wait">
+//         <motion.div
+//           key={currentIndex}
+//           initial={{ opacity: 0, y: 20, scale: 0.95 }}
+//           animate={{ opacity: 1, y: 0, scale: 1 }}
+//           exit={{ opacity: 0, y: -20, scale: 0.95 }}
+//           transition={{ duration: 0.5 }}
+//           className="text-center max-w-3xl mx-auto"
+//         >
+//           <div className="mb-8">
+//             <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-purple-600 to-indigo-600 flex items-center justify-center text-white text-3xl font-bold shadow-xl">
+//               {testimonials[currentIndex].avatar}
+//             </div>
+//             <p className="text-2xl md:text-3xl font-medium text-slate-800 dark:text-slate-200 mb-6 leading-relaxed">
+//               "{testimonials[currentIndex].quote}"
+//             </p>
+//             <div>
+//               <p className="font-bold text-lg text-slate-900 dark:text-white">
+//                 {testimonials[currentIndex].author}
+//               </p>
+//               <p className="text-slate-600 dark:text-slate-400">
+//                 {testimonials[currentIndex].role} at {testimonials[currentIndex].company}
+//               </p>
+//             </div>
+//           </div>
+//         </motion.div>
+//       </AnimatePresence>
 
-      {/* Indicators */}
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex gap-2">
-        {testimonials.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              index === currentIndex
-                ? 'bg-purple-600 w-8'
-                : 'bg-slate-300 dark:bg-slate-600'
-            }`}
-            aria-label={`Go to testimonial ${index + 1}`}
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
+//       {/* Indicators */}
+//       <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex gap-2">
+//         {testimonials.map((_, index) => (
+//           <button
+//             key={index}
+//             onClick={() => setCurrentIndex(index)}
+//             className={`w-2 h-2 rounded-full transition-all duration-300 ${
+//               index === currentIndex
+//                 ? 'bg-purple-600 w-8'
+//                 : 'bg-slate-300 dark:bg-slate-600'
+//             }`}
+//             aria-label={`Go to testimonial ${index + 1}`}
+//           />
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
 
-// Interactive Roadmap Timeline
-const RoadmapTimeline = ({ items }: { items: RoadmapItem[] }) => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+// Interactive Roadmap Timeline - Currently unused but kept for future use
+// const RoadmapTimeline = ({ items }: { items: RoadmapItem[] }) => {
+//   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const statusColors = {
-    completed: 'from-green-500 to-emerald-600',
-    'in-progress': 'from-purple-500 to-indigo-600',
-    planned: 'from-slate-400 to-slate-500',
-  };
+//   const statusColors = {
+//     completed: 'from-green-500 to-emerald-600',
+//     'in-progress': 'from-purple-500 to-indigo-600',
+//     planned: 'from-slate-400 to-slate-500',
+//   };
 
-  return (
-    <div className="relative">
-      {/* Timeline Line */}
-      <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-600 via-indigo-600 to-purple-600 transform -translate-x-1/2 hidden md:block" />
+//   return (
+//     <div className="relative">
+//       {/* Timeline Line */}
+//       <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-600 via-indigo-600 to-purple-600 transform -translate-x-1/2 hidden md:block" />
 
-      <div className="space-y-12">
-        {items.map((item, index) => (
-          <ScrollReveal key={index} delay={index * 0.1}>
-            <motion.div
-              className={`flex flex-col md:flex-row items-center gap-8 ${
-                index % 2 === 0 ? 'md:flex-row-reverse' : ''
-              }`}
-              onHoverStart={() => setActiveIndex(index)}
-              onHoverEnd={() => setActiveIndex(null)}
-            >
-              {/* Content */}
-              <motion.div
-                className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'} text-center md:text-inherit`}
-                whileHover={{ scale: 1.02 }}
-              >
-                <div className="glass-morphism rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300">
-                  <div className="inline-block px-4 py-1 rounded-full bg-gradient-to-r from-purple-100 to-indigo-100 dark:from-purple-900/30 dark:to-indigo-900/30 mb-4">
-                    <span className="text-sm font-semibold text-purple-600 dark:text-purple-400">
-                      {item.quarter} {item.year}
-                    </span>
-                  </div>
-                  <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
-                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              </motion.div>
+//       <div className="space-y-12">
+//         {items.map((item, index) => (
+//           <ScrollReveal key={index} delay={index * 0.1}>
+//             <motion.div
+//               className={`flex flex-col md:flex-row items-center gap-8 ${
+//                 index % 2 === 0 ? 'md:flex-row-reverse' : ''
+//               }`}
+//               onHoverStart={() => setActiveIndex(index)}
+//               onHoverEnd={() => setActiveIndex(null)}
+//             >
+//               {/* Content */}
+//               <motion.div
+//                 className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'} text-center md:text-inherit`}
+//                 whileHover={{ scale: 1.02 }}
+//               >
+//                 <div className="glass-morphism rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300">
+//                   <div className="inline-block px-4 py-1 rounded-full bg-gradient-to-r from-purple-100 to-indigo-100 dark:from-purple-900/30 dark:to-indigo-900/30 mb-4">
+//                     <span className="text-sm font-semibold text-purple-600 dark:text-purple-400">
+//                       {item.quarter} {item.year}
+//                     </span>
+//                   </div>
+//                   <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
+//                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+//                     {item.description}
+//                   </p>
+//                 </div>
+//               </motion.div>
 
-              {/* Timeline Node */}
-              <motion.div
-                className="relative z-10"
-                animate={{
-                  scale: activeIndex === index ? 1.2 : 1,
-                }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${statusColors[item.status]} flex items-center justify-center shadow-lg`}>
-                  {item.status === 'completed' && (
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                    </svg>
-                  )}
-                  {item.status === 'in-progress' && (
-                    <motion.div
-                      animate={{ rotate: 360 }}
-                      transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                      className="w-6 h-6 border-4 border-white border-t-transparent rounded-full"
-                    />
-                  )}
-                  {item.status === 'planned' && (
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                    </svg>
-                  )}
-                </div>
-              </motion.div>
+//               {/* Timeline Node */}
+//               <motion.div
+//                 className="relative z-10"
+//                 animate={{
+//                   scale: activeIndex === index ? 1.2 : 1,
+//                 }}
+//                 transition={{ duration: 0.3 }}
+//               >
+//                 <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${statusColors[item.status]} flex items-center justify-center shadow-lg`}>
+//                   {item.status === 'completed' && (
+//                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+//                     </svg>
+//                   )}
+//                   {item.status === 'in-progress' && (
+//                     <motion.div
+//                       animate={{ rotate: 360 }}
+//                       transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+//                       className="w-6 h-6 border-4 border-white border-t-transparent rounded-full"
+//                     />
+//                   )}
+//                   {item.status === 'planned' && (
+//                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+//                     </svg>
+//                   )}
+//                 </div>
+//               </motion.div>
 
-              {/* Spacer */}
-              <div className="flex-1 hidden md:block" />
-            </motion.div>
-          </ScrollReveal>
-        ))}
-      </div>
-    </div>
-  );
-};
+//               {/* Spacer */}
+//               <div className="flex-1 hidden md:block" />
+//             </motion.div>
+//           </ScrollReveal>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
 
 // Animated Counter
 const AnimatedCounter = ({ value, suffix = '' }: { value: string; suffix?: string }) => {
@@ -460,74 +460,76 @@ function App() {
     { value: '4.8★', label: 'Customer Rating' },
   ];
 
-  const testimonials: Testimonial[] = [
-    {
-      quote: "Repaxio transformed how we manage our online reputation. The AI responses are incredibly natural and save us hours every week.",
-      author: "Sarah Martinez",
-      role: "Owner",
-      company: "Bella Vista Restaurant",
-      avatar: "SM"
-    },
-    {
-      quote: "The SMS campaigns feature helped us increase repeat customers by 35% in just two months. This platform pays for itself.",
-      author: "Dr. James Chen",
-      role: "Practice Manager",
-      company: "Wellness Medical Center",
-      avatar: "JC"
-    },
-    {
-      quote: "Finally, a reputation management tool built for real businesses. The competitor tracking gives us insights we never had before.",
-      author: "Michael Rodriguez",
-      role: "Director of Operations",
-      company: "Premium Auto Group",
-      avatar: "MR"
-    },
-    {
-      quote: "FoundHex understands local businesses. Their customer support is incredible and the platform just works flawlessly.",
-      author: "Emily Thompson",
-      role: "Marketing Director",
-      company: "Elite Home Services",
-      avatar: "ET"
-    }
-  ];
+  // Testimonials data - Currently unused but kept for future use
+  // const testimonials: Testimonial[] = [
+  //   {
+  //     quote: "Repaxio transformed how we manage our online reputation. The AI responses are incredibly natural and save us hours every week.",
+  //     author: "Sarah Martinez",
+  //     role: "Owner",
+  //     company: "Bella Vista Restaurant",
+  //     avatar: "SM"
+  //   },
+  //   {
+  //     quote: "The SMS campaigns feature helped us increase repeat customers by 35% in just two months. This platform pays for itself.",
+  //     author: "Dr. James Chen",
+  //     role: "Practice Manager",
+  //     company: "Wellness Medical Center",
+  //     avatar: "JC"
+  //   },
+  //   {
+  //     quote: "Finally, a reputation management tool built for real businesses. The competitor tracking gives us insights we never had before.",
+  //     author: "Michael Rodriguez",
+  //     role: "Director of Operations",
+  //     company: "Premium Auto Group",
+  //     avatar: "MR"
+  //   },
+  //   {
+  //     quote: "FoundHex understands local businesses. Their customer support is incredible and the platform just works flawlessly.",
+  //     author: "Emily Thompson",
+  //     role: "Marketing Director",
+  //     company: "Elite Home Services",
+  //     avatar: "ET"
+  //   }
+  // ];
 
-  const roadmapItems: RoadmapItem[] = [
-    {
-      quarter: "Q4",
-      year: "2024",
-      title: "Repaxio Launch",
-      description: "Launched our flagship AI-powered reputation management platform with review monitoring, AI responses, and SMS campaigns.",
-      status: "completed"
-    },
-    {
-      quarter: "Q1",
-      year: "2025",
-      title: "Advanced Analytics",
-      description: "Currently rolling out comprehensive analytics dashboard with sentiment analysis and competitive benchmarking.",
-      status: "in-progress"
-    },
-    {
-      quarter: "Q2",
-      year: "2025",
-      title: "Multi-Location Support",
-      description: "Enterprise features for businesses with multiple locations, including centralized management and location-specific insights.",
-      status: "in-progress"
-    },
-    {
-      quarter: "Q3",
-      year: "2025",
-      title: "Platform Expansion",
-      description: "New products focused on operations and customer experience, seamlessly integrated with Repaxio.",
-      status: "planned"
-    },
-    {
-      quarter: "Q4",
-      year: "2025",
-      title: "AI-Powered Insights",
-      description: "Predictive analytics and recommendations to help businesses proactively improve customer satisfaction.",
-      status: "planned"
-    }
-  ];
+  // Roadmap data - Currently unused but kept for future use
+  // const roadmapItems: RoadmapItem[] = [
+  //   {
+  //     quarter: "Q4",
+  //     year: "2024",
+  //     title: "Repaxio Launch",
+  //     description: "Launched our flagship AI-powered reputation management platform with review monitoring, AI responses, and SMS campaigns.",
+  //     status: "completed"
+  //   },
+  //   {
+  //     quarter: "Q1",
+  //     year: "2025",
+  //     title: "Advanced Analytics",
+  //     description: "Currently rolling out comprehensive analytics dashboard with sentiment analysis and competitive benchmarking.",
+  //     status: "in-progress"
+  //   },
+  //   {
+  //     quarter: "Q2",
+  //     year: "2025",
+  //     title: "Multi-Location Support",
+  //     description: "Enterprise features for businesses with multiple locations, including centralized management and location-specific insights.",
+  //     status: "in-progress"
+  //   },
+  //   {
+  //     quarter: "Q3",
+  //     year: "2025",
+  //     title: "Platform Expansion",
+  //     description: "New products focused on operations and customer experience, seamlessly integrated with Repaxio.",
+  //     status: "planned"
+  //   },
+  //   {
+  //     quarter: "Q4",
+  //     year: "2025",
+  //     title: "AI-Powered Insights",
+  //     description: "Predictive analytics and recommendations to help businesses proactively improve customer satisfaction.",
+  //     status: "planned"
+  //   }
+  // ];
 
   const approaches: Feature[] = [
     {
@@ -1406,7 +1408,7 @@ function App() {
                 { label: 'Twitter', icon: 'M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84' },
                 { label: 'LinkedIn', icon: 'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z' },
                 { label: 'GitHub', icon: 'M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z' }
-              ].map((social, index) => (
+              ].map((social) => (
                 <motion.a
                   key={social.label}
                   href="#"
