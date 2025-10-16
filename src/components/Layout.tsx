@@ -70,6 +70,7 @@ export function Layout({ children }: LayoutProps) {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  const isRepaxioPage = location.pathname === '/repaxio';
 
   // Dark mode detection
   useEffect(() => {
@@ -209,21 +210,38 @@ export function Layout({ children }: LayoutProps) {
                 )}
               </AnimatePresence>
             </motion.button>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link
-                to="/repaxio"
-                className="px-6 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group"
+            {isRepaxioPage ? (
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <span className="relative z-10">Try Repaxio</span>
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity"
-                  layoutId="button-bg"
-                />
-              </Link>
-            </motion.div>
+                <a
+                  href="mailto:sales@foundhex.com"
+                  className="px-6 py-2.5 glass-morphism hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg font-semibold transition-all duration-300 border border-slate-200/50 dark:border-slate-700/50 flex items-center gap-2"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <span>Contact Sales</span>
+                </a>
+              </motion.div>
+            ) : (
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link
+                  to="/repaxio"
+                  className="px-6 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group"
+                >
+                  <span className="relative z-10">Try Repaxio</span>
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity"
+                    layoutId="button-bg"
+                  />
+                </Link>
+              </motion.div>
+            )}
           </div>
         </div>
       </motion.nav>
