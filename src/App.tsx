@@ -5,7 +5,7 @@ import { RepaxioPage } from './pages/RepaxioPage';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/CompanyPage">
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />

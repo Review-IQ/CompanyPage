@@ -1,6 +1,5 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
 import { OrganizationSignupForm } from '../components/OrganizationSignupForm';
 
 // Reusable ScrollReveal component
@@ -38,6 +37,12 @@ interface Feature {
 
 export function RepaxioPage() {
   const [activeTab, setActiveTab] = useState<'signup' | 'demo'>('signup');
+  const ctaSectionRef = useRef<HTMLElement>(null);
+
+  const scrollToCTA = (tab: 'signup' | 'demo') => {
+    setActiveTab(tab);
+    ctaSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
 
   const features: Feature[] = [
     {
@@ -196,6 +201,56 @@ export function RepaxioPage() {
                 </motion.div>
               ))}
             </div>
+
+            {/* Hero CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            >
+              <motion.button
+                onClick={() => scrollToCTA('signup')}
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-xl font-semibold text-lg shadow-2xl hover:shadow-purple-500/50 transition-all relative overflow-hidden group"
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  Start Free Trial
+                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </span>
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity"
+                  layoutId="button-hover"
+                />
+              </motion.button>
+
+              <motion.button
+                onClick={() => scrollToCTA('demo')}
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 glass-morphism hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl font-semibold text-lg transition-all border border-slate-200/50 dark:border-slate-700/50 relative overflow-hidden group"
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
+                  Book a Demo
+                </span>
+              </motion.button>
+            </motion.div>
+
+            {/* Trust Badge */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 1 }}
+              className="mt-8 text-sm text-slate-500 dark:text-slate-400"
+            >
+              ✓ No credit card required  ✓ 14-day free trial  ✓ Cancel anytime
+            </motion.p>
           </motion.div>
         </div>
       </section>
@@ -322,7 +377,7 @@ export function RepaxioPage() {
       </section>
 
       {/* CTA Section - Signup or Demo */}
-      <section className="py-32 px-6">
+      <section ref={ctaSectionRef} className="py-32 px-6">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-12">
