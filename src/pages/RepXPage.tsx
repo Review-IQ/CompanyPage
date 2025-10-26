@@ -35,7 +35,7 @@ interface Feature {
   highlight?: string;
 }
 
-export function RepaxioPage() {
+export function RepXPage() {
   const [activeTab, setActiveTab] = useState<'signup' | 'demo'>('signup');
   const ctaSectionRef = useRef<HTMLElement>(null);
 
@@ -327,7 +327,7 @@ export function RepaxioPage() {
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">How Repaxio Works</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">How RepX Works</h2>
               <p className="text-xl text-slate-600 dark:text-slate-400">
                 Get started in minutes, see results immediately
               </p>
@@ -482,7 +482,7 @@ function DemoBookingForm() {
         </motion.div>
         <h2 className="text-4xl font-bold mb-4">Demo Scheduled!</h2>
         <p className="text-xl text-slate-600 dark:text-slate-400 mb-6">
-          Thank you for your interest in Repaxio.
+          Thank you for your interest in RepX.
         </p>
         <div className="bg-purple-50 dark:bg-purple-900/20 rounded-xl p-6">
           <p className="text-lg font-semibold text-purple-900 dark:text-purple-100 mb-2">
@@ -505,7 +505,7 @@ function DemoBookingForm() {
       <div className="mb-8">
         <h3 className="text-3xl font-bold mb-2 text-center">Schedule Your Personal Demo</h3>
         <p className="text-center text-slate-600 dark:text-slate-400">
-          See Repaxio in action with a personalized walkthrough
+          See RepX in action with a personalized walkthrough
         </p>
       </div>
 

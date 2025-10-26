@@ -70,7 +70,7 @@ export function Layout({ children }: LayoutProps) {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
-  const isRepaxioPage = location.pathname === '/repaxio';
+  const isRepXPage = location.pathname === '/repx';
 
   // Dark mode detection
   useEffect(() => {
@@ -210,7 +210,7 @@ export function Layout({ children }: LayoutProps) {
                 )}
               </AnimatePresence>
             </motion.button>
-            {isRepaxioPage ? (
+            {isRepXPage ? (
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -231,10 +231,10 @@ export function Layout({ children }: LayoutProps) {
                 whileTap={{ scale: 0.95 }}
               >
                 <Link
-                  to="/repaxio"
+                  to="/repx"
                   className="px-6 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group"
                 >
-                  <span className="relative z-10">Try Repaxio</span>
+                  <span className="relative z-10">Try RepX</span>
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity"
                     layoutId="button-bg"
@@ -274,7 +274,7 @@ export function Layout({ children }: LayoutProps) {
               {
                 title: 'Product',
                 links: [
-                  { label: 'Repaxio', to: '/repaxio' },
+                  { label: 'RepX', to: '/repx' },
                   { label: 'Features', to: '/#product' },
                   { label: 'Technology', to: '/#technology' },
                 ]

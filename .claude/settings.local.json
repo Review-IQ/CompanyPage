@@ -4,7 +4,11 @@
       "Bash(gh repo view:*)",
       "Bash(gh api:*)",
       "Bash(gh run list:*)",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:birdeye.com)",
+      "WebFetch(domain:reputation.com)",
+      "Bash(git mv:*)",
+      "Bash(move \"src\\pages\\RepaxioPage.tsx\" \"src\\pages\\RepXPage.tsx\")"
     ],
     "deny": [],
     "ask": []
