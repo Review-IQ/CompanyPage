@@ -157,7 +157,7 @@ export function OrganizationSignupForm() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
           </svg>
         </motion.div>
-        <h2 className="text-4xl font-bold mb-4">Welcome to Repaxio!</h2>
+        <h2 className="text-4xl font-bold mb-4">Welcome to RepX!</h2>
         <p className="text-xl text-slate-600 dark:text-slate-400 mb-6">
           Your organization has been created successfully.
         </p>
@@ -173,12 +173,12 @@ export function OrganizationSignupForm() {
           </p>
         </div>
         <motion.a
-          href="https://repaxio.com"
+          href="https://repx.com"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all"
         >
-          Return to Repaxio
+          Return to RepX
         </motion.a>
       </motion.div>
     );
@@ -192,7 +192,7 @@ export function OrganizationSignupForm() {
     >
       <div className="mb-8">
         <h2 className="text-4xl font-bold mb-2 text-center">
-          Get Started with <span className="text-gradient">Repaxio</span>
+          Get Started with <span className="text-gradient">RepX</span>
         </h2>
         <p className="text-center text-slate-600 dark:text-slate-400">
           Create your organization and start managing your reputation in minutes

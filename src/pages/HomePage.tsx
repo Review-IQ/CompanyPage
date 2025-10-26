@@ -413,8 +413,7 @@ export function HomePage() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
-            We create AI-powered software solutions that empower restaurants, medical practices,
-            and service businesses to thrive in the digital age.
+            We craft AI-powered solutions that help businesses amplify their presence, strengthen relationships, and accelerate growth.
           </motion.p>
 
           <motion.div
@@ -424,10 +423,10 @@ export function HomePage() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <MagneticButton
-              to="/repaxio"
+              to="/repx"
               className="px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl font-semibold text-lg shadow-2xl hover:shadow-purple-500/50 relative overflow-hidden group inline-block"
             >
-              <span className="relative z-10">Discover Repaxio</span>
+              <span className="relative z-10">Discover RepX</span>
             </MagneticButton>
             <MagneticButton
               to="#approach"
@@ -466,17 +465,17 @@ export function HomePage() {
           <ScrollReveal>
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-6xl font-bold mb-6">
-                Meet <span className="text-gradient">Repaxio</span>
+                Meet <span className="text-gradient">RepX</span>
               </h2>
               <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto mb-8">
                 Our flagship AI-powered reputation management platform that helps local businesses
                 monitor, respond to, and grow their online presence.
               </p>
               <MagneticButton
-                to="/repaxio"
+                to="/repx"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all"
               >
-                Explore Repaxio
+                Explore RepX
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
@@ -706,10 +705,10 @@ export function HomePage() {
               <div className="relative z-10">
                 <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Transform Your Business?</h2>
                 <p className="text-xl text-slate-600 dark:text-slate-400 mb-10">
-                  Join the businesses already thriving with Repaxio
+                  Join the businesses already thriving with RepX
                 </p>
                 <MagneticButton
-                  to="/repaxio"
+                  to="/repx"
                   className="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all"
                 >
                   Get Started Now
