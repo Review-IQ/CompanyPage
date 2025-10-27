@@ -5,7 +5,7 @@ import { RepXPage } from './pages/RepXPage';
 
 function App() {
   return (
-    <Router basename="/CompanyPage">
+    <Router basename="/">
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
